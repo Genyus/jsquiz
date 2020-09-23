@@ -13,7 +13,7 @@ function buildQuiz() {
     for (const letter in currentQuestion.answers) {
       answers.push(
         `<label>
-          <input type="radio" class="radio-button" name="question${questionNumber}" value="${letter}">
+          <input type="radio" name="question${questionNumber}" value="${letter}">
           ${letter} :
           ${currentQuestion.answers[letter]}
         </label>`
@@ -26,7 +26,7 @@ function buildQuiz() {
   });
 
   quizContainer.innerHTML = output.join("");
-  submitButton.addEventListener("click", showResults(quizContainer));
+  submitButton.addEventListener("click", showResults);
 }
 
 export default buildQuiz;
